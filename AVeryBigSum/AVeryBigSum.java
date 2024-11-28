@@ -1,3 +1,4 @@
+package AVeryBigSum;
 import java.io.*;
 import java.math.*;
 import java.security.*;
@@ -21,9 +22,12 @@ class Result {
 
     public static long aVeryBigSum(List<Long> ar) {
     // Write your code here
-
+    long sum = 0;
+    for(int i = 0; i < ar.size(); i++) {
+        sum += ar.get(i);
     }
-
+    return sum;
+    }
 }
 
 public class AVeryBigSum {
@@ -31,7 +35,7 @@ public class AVeryBigSum {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
 
-        int arCount = Integer.parseInt(bufferedReader.readLine().trim());
+        bufferedReader.readLine().trim();
 
         List<Long> ar = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
             .map(Long::parseLong)

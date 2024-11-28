@@ -1,3 +1,4 @@
+package JavaOutputFormatting;
 import java.util.Scanner;
 
 public class JavaOutputFormatting {

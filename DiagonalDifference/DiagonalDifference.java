@@ -22,7 +22,15 @@ class Result {
 
     public static int diagonalDifference(List<List<Integer>> arr) {
     // Write your code here
-
+        int primary = 0;
+        int secondary = 0;
+        
+        for (int i = 0; i < arr.size(); i++) {
+            primary += arr.get(i).get(i);
+            secondary += arr.get(i).get(arr.size() - 1 - i);
+        }
+        
+        return Math.abs(primary - secondary);
     }
 
 }

@@ -21,7 +21,14 @@ class Result {
 
     public static void miniMaxSum(List<Integer> arr) {
     // Write your code here
-
+    Collections.sort(arr);
+    int min = arr.get(0);
+    int max = arr.get(arr.size() -1);
+    int sum = 0;
+    for(int x : arr) {
+        sum += x;
+    }
+    System.out.println((sum - max) + " " + (sum - min));
     }
 
 }

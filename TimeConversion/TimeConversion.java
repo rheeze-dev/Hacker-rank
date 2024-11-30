@@ -22,21 +22,23 @@ class Result {
 
     public static String timeConversion(String s) {
     // Write your code here
-    
-        if(s.contains("AM")) {
-            if(s.contains("12:")) {
-                return "00" + s.substring(2, 9);
+        String hour = s.substring(0,2);
+        int converted = Integer.parseInt(hour) + 12;
+        char checker = s.charAt(8);
+        if(checker == 'A') {
+            if(hour.equals("12")) {
+                return "00" + s.substring(2, 8);
             }
             else {
-                return s;
+                return s.substring(0, 8);
             }
         }
         else {
-            if(s.contains("12:")) {
-                return s;
+            if(hour.equals("12")) {
+                return s.substring(0, 8);
             }
             else {
-
+                return converted + s.substring(2, 8);
             }
         }
     }

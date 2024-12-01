@@ -22,7 +22,7 @@ class Result {
 
     public static String nimGame(List<Integer> pile) {
     // Write your code here
-
+        return "test code";
     }
 
 }

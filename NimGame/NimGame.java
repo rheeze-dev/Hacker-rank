@@ -22,7 +22,12 @@ class Result {
 
     public static String nimGame(List<Integer> pile) {
     // Write your code here
-        return "test code";
+        if(pile.size() % 2 == 0) {
+            return "Second";
+        }
+        else {
+            return "First";
+        }
     }
 
 }
@@ -36,7 +41,7 @@ public class NimGame {
 
         IntStream.range(0, g).forEach(gItr -> {
             try {
-                int n = Integer.parseInt(bufferedReader.readLine().trim());
+                bufferedReader.readLine().trim();
 
                 List<Integer> pile = Stream.of(bufferedReader.readLine().replaceAll("\\s+$", "").split(" "))
                     .map(Integer::parseInt)

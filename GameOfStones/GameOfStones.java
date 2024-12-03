@@ -22,7 +22,12 @@ class Result {
 
     public static String gameOfStones(int n) {
     // Write your code here
-
+        if(n % 7 == 00 || n % 7 == 1) {
+            return "Second";
+        }
+        else {
+            return "First";
+        }
     }
 
 }

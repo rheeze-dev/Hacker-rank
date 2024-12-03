@@ -24,7 +24,11 @@ class Result {
 
     public static String chessboardGame(int x, int y) {
     // Write your code here
-
+        if ((x - 1) % 4 < 2 && (y - 1) % 4 < 2) {
+            return "Second";
+        } else {
+            return "First";
+        }
     }
 
 }

@@ -24,10 +24,21 @@ class Result {
      *  4. INTEGER v2
      */
 
-    public static String kangaroo(int x1, int v1, int x2, int v2) {
-    // Write your code here
-
-    }
+     public static String kangaroo(int x1, int v1, int x2, int v2) {
+        // Write your code here
+            if (x2 > x1 && v2 >= v1) {
+                return "NO";
+            }
+    
+            int speedDifference = v1 - v2;
+            int initialDistance = x2 - x1;
+    
+            if (speedDifference > 0 && initialDistance % speedDifference == 0) {
+                return "YES";
+            } else {
+                return "NO";
+            }
+        }
 
 }
 

@@ -20,10 +20,19 @@ class Result {
      * The function accepts INTEGER_ARRAY grades as parameter.
      */
 
-    public static List<Integer> gradingStudents(List<Integer> grades) {
-    // Write your code here
-
-    }
+     public static List<Integer> gradingStudents(List<Integer> grades) {
+        // Write your code here
+            List<Integer> output = new ArrayList<>();
+            for(int grade : grades) {
+                if(grade < 38 || grade % 5 < 3)
+                    output.add(grade);
+                else if(grade % 5 == 3)
+                    output.add(grade + 2);
+                else if(grade % 5 == 4)
+                    output.add(grade + 1);
+            }
+            return output;
+        }
 
 }
 

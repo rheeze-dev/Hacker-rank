@@ -25,11 +25,23 @@ class Result {
      *  6. INTEGER_ARRAY oranges
      */
 
-    public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
-    // Write your code here
-
-    }
-
+     public static void countApplesAndOranges(int s, int t, int a, int b, List<Integer> apples, List<Integer> oranges) {
+        // Write your code here
+            int totalApples = 0;
+            int totalOranges = 0;
+            for(int i = 0; i < apples.size(); i++) {
+                apples.set(i, apples.get(i) + a);
+                if(apples.get(i) >= s && apples.get(i) <= t)
+                    totalApples++;
+            }
+            for(int i = 0; i < oranges.size(); i++) {
+                oranges.set(i, (oranges.get(i)) + b);
+                if(oranges.get(i) >= s && oranges.get(i) <= t)
+                    totalOranges++;
+            }
+            System.out.println(totalApples);
+            System.out.println(totalOranges);
+        }
 }
 
 public class AppleAndOrange {

@@ -22,9 +22,29 @@ class Result {
      *  2. INTEGER_ARRAY b
      */
 
-    public static int getTotalX(List<Integer> a, List<Integer> b) {
-    // Write your code here
-
+     public static int getTotalX(int n, int m, List<Integer> a, List<Integer> b) {
+        int total = 0, x = 0, y = 0;
+        for (int i = a.get(n - 1); i <= b.get(0); i++) {
+            for (int j = 0; j < n; j++) {
+                if (i % a.get(j) == 0) {
+                    y++;
+                }
+            }
+            if (y == n) {
+                for (int k = 0; k < m; k++) {
+                    if (b.get(k) % i == 0) {
+                        x++;
+                    }
+                }
+                if (x == m) {
+                    total++;
+                }
+            }
+            // changes here
+            y = 0;
+            x = 0;
+        }
+        return total;
     }
 
 }
@@ -48,7 +68,7 @@ public class BetweenTwoSets {
             .map(Integer::parseInt)
             .collect(toList());
 
-        int total = Result.getTotalX(arr, brr);
+        int total = Result.getTotalX(n, m, arr, brr);
 
         bufferedWriter.write(String.valueOf(total));
         bufferedWriter.newLine();

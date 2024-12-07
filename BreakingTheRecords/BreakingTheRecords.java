@@ -22,9 +22,23 @@ class Result {
 
     public static List<Integer> breakingRecords(List<Integer> scores) {
     // Write your code here
+    int maxCount = 0, minCount = 0;
+    int maxScore = scores.get(0), minScore = scores.get(0);
+    List<Integer> output = new ArrayList<>();
 
+    for(int i = 1; i < scores.size(); i++){
+        if(scores.get(i) > maxScore){
+            maxScore = scores.get(i);
+            maxCount++;
+        } else if(scores.get(i) < minScore){
+            minScore = scores.get(i);
+            minCount++;
+        }
     }
-
+    output.add(maxCount);
+    output.add(minCount);
+    return output;
+    }
 }
 
 public class BreakingTheRecords {

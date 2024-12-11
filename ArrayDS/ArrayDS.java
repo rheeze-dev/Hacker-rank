@@ -22,8 +22,8 @@ class Result {
 
      public static List<Integer> reverseArray(List<Integer> a) {
         // Write your code here
-        List<Integer> data = new ArrayList<Integer>();
-        return data;
+        Collections.reverse(a);
+        return a;
     }
 
 }

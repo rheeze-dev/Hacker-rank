@@ -22,10 +22,27 @@ class Result {
      *  2. INTEGER_ARRAY arr
      */
 
-    public static List<Integer> rotateLeft(int d, List<Integer> arr) {
-    // Write your code here
-
-    }
+     public static List<Integer> rotateLeft(int d, List<Integer> arr) {
+        int count = 0;
+        List<Integer> tempList = new ArrayList<Integer>();
+        for(int i=0;i<d;i++)
+        {
+            tempList.add(arr.get(i));
+        }
+        int len = arr.size();
+        for(int i=d;i<len;i++)
+        {
+            
+            arr.set(count, arr.get(i));
+            count++;
+        }
+        
+        for(int i: tempList)
+        {
+            arr.set(count++,i);
+        }
+         return arr;
+        }
 
 }
 
